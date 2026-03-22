@@ -36,7 +36,7 @@ builds:
       post:
         - cmd: |
             {{- if eq .Os "darwin" -}}
-            quill sign-and-notarize "{{ .Path }}" --dry-run={{ .IsSnapshot }} --ad-hoc={{ .IsSnapshot }} -vv
+            quill sign-and-notarize "{{ .Path }}" --dry-run=true --ad-hoc=true -vv
             {{- else -}}
             true
             {{- end -}}
